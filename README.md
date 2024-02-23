@@ -1,4 +1,3 @@
-# hackathon-team8-frontend
 
 # Getting Started with Project
 
