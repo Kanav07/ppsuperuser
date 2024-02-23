@@ -1,0 +1,32 @@
+@import '../../styles/var.scss';
+
+.accordion {
+  border-radius: $rhythm-half;
+  padding: $rhythm * 2;
+  background-color: $white;
+  box-shadow: 0px 4px 12px 0px #00000014;
+
+  .accordion-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+
+    .arrow-icon {
+      vertical-align: middle;
+      cursor: pointer;
+      height: $rhythm-double;
+      width: $rhythm-double;
+    }
+
+    .up-arrow {
+      transform: rotate(180deg);
+    }
+  }
+
+  .accordion-content {
+    padding-top: $rhythm-double;
+  }
+}

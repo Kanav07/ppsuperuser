@@ -1,0 +1,22 @@
+/* styles.css */
+
+.container {
+    margin: 20px auto;
+}
+
+.filterButtons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.carouselContainer {
+    margin: 20px 0;
+}
+
+.showMoreButton {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}

@@ -1,0 +1,28 @@
+.benefit-cards-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .benefit-card {
+    width: 49%;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    /* background-color: #585656; */
+    /* color: #fff; */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .benefit-card h3 {
+    margin: 0;
+  }
+  
+  .benefit-card:hover {
+    transform: scale(1.05);
+  }
+  
+
+  

@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.flip-box {
+  width: 100px;
+  height: 100px;
+  aspect-ratio: 1/1;
+  perspective: 1000px;
+  cursor: pointer;
+  float: left;
+  margin: 5px;
+}
+
+
+.flip-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: indianred;
+  color: #fff;
+  font-size: 8px;
+  backface-visibility: hidden;
+  border-color: black;
+  border-radius: 30px;
+  transform: rotateY(180deg);
+  /*transition-duration: 0.5s;*/
+
+}
+
+
+.flip-front {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background-color: grey;*/
+  color: #fff;
+  font-size: 24px;
+  backface-visibility: hidden;
+  border-radius: 30px;
+  background-color: white;
+}
+
+.breaker {
+  clear: left;
+}
+
+
+.PersonalizedOffersTextDiv {
+  border-radius: 10px;
+  /* background-color: black; */
+  /* color: white; */
+  /* margin: 8px; */
+  /* border: 1px solid black; */
+  padding: 3px;
+}

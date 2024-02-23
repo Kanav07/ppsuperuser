@@ -1,0 +1,239 @@
+.appContainer {
+  font-family: 'Hiragino Sans';
+  font-size: 14px;
+  font-weight: normal;
+  background-color: #fafcff;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.appContents {
+  padding: 24px;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}
+// For portfolio
+
+.user-dashboard {
+  background-color: rgb(231, 231, 231);
+  color: rgb(51, 51, 51);
+  // padding: 20px;
+  border-radius: 10px;
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.balance-section {
+  margin-bottom: 10px;
+}
+
+.portfolio-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.portfolio-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  justify-content: space-between;
+  // margin: 3px;
+  border: 1px solid #4c4522;
+  background-color: rgb(255, 255, 255);
+}
+
+.service-text {
+  font-size: 100%;
+}
+
+.icon {
+  font-size: 8px;
+  margin-bottom: 5px;
+}
+
+.amount {
+  font-size: 100%;
+  font-weight:bolder;
+  margin-top: 5px;
+}
+
+.last-refreshed {
+  float: right;
+  font-size: 70%;
+  padding: 3px;
+}
+
+.card-name {
+  font-size: 8px;
+}
+
+.large {
+  flex: 1.8;
+}
+
+.medium {
+  flex: 1.2;
+}
+
+.small {
+  flex: 1;
+}
+
+.portfolio-item.empty {
+  background-color: #555;
+}
+
+.credit-card-summary {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.credit-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.credit-card span:first-child {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.note {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.superuser-logo {
+    width: 20%;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+/* Add this CSS to your stylesheet */
+.nav-link {
+  text-decoration: none;
+  color: #000; /* Set your desired color */
+  transition: color 0.3s ease-in-out; /* Add a transition for color change */
+}
+
+.nav-link:hover {
+  color: #007bff; /* Set your desired hover color */
+}
+
+.active-link {
+  color: #007bff; /* Set your desired active link color */
+}
+
+/* Add animation styles */
+.animate {
+  width: 100%;
+  border-radius: 50%;
+  margin: 10px;
+  transition: transform 3s linear; /* Adjust the duration and easing as needed */
+  transform: scale(0.5); /* You can customize the scale or other properties for the animation */
+}
+
+.superuser-loader {
+  width: 90%;
+  border-radius: 45%;
+  margin: 10px;
+}
+
+/* Add this CSS to your stylesheet */
+.popup-container {
+  position: absolute;
+  top: 20%;
+  // left: 0;
+  // width: 30%;
+  // height: 30%;
+  // background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.popup-content img {
+  max-width: 100%;
+  max-height: 80vh; /* Limit the height of the image */
+}
+
+.popup-content button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.smartphone-container {
+  position: relative;
+  width: 60%; /* Adjust width according to your design */
+  height: 100%; /* Adjust height according to your design */
+  margin: 50px auto; /* Center the container on the page */
+  background-color: #fff; /* Background color of the smartphone */
+  border: 16px solid #000; /* Border color of the smartphone */
+  border-radius: 36px; /* Adjust the border-radius for rounded corners */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add a shadow for a more realistic effect */
+}
+
+.smartphone-container:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 20px;
+  height: 5px;
+  background-color: #333; /* Home button color */
+  border-radius: 5px;
+  transform: translateX(-50%);
+}
+
+.smartphone-container:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 40px;
+  height: 3px;
+  background-color: #333; /* Earpiece color */
+  border-radius: 5px;
+  transform: translateX(-50%);
+}
+
+.supertext-super{
+  font-size: 30px;
+  font-weight: 800;
+  color: red;
+}
+
+.supertext-normal{
+  font-size: 30px;
+  font-weight: 800;
+  color: darkgray;
+}

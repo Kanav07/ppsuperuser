@@ -1,0 +1,19 @@
+body.app-ios {
+  *:not(input):not(textarea):not([contenteditable]):not([contenteditable] *) {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+  }
+
+  &.onetrust-hidden {
+    #onetrust-consent-sdk {
+      display: none;
+    }
+  }
+}
+
+body.app-android {
+  *:not(input):not(textarea):not([contenteditable]):not([contenteditable] *) {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+  }
+}

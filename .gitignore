@@ -1,0 +1,7 @@
+/node_modules/*
+dist/
+*.local
+coverage/
+
+.vscode/*
+!.vscode/extensions.json

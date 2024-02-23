@@ -1,0 +1,113 @@
+@import '../../styles/var.scss';
+@import '../../styles/mixin.scss';
+
+$speed: $anim-speed-fast;
+
+.buttonWrapper {
+  @include flex-row-all-center;
+  border-radius: $border-radius-base;
+  border: none;
+  box-sizing: border-box;
+  font-family: Hiragino Sans;
+  font-weight: bold;
+  text-decoration: none; // when used as a link
+  transition: background-color $speed, border-color $speed, color $speed;
+
+  &:not(:disabled):active,
+  &:not(:disabled):hover {
+    cursor: pointer;
+  }
+
+  &:disabled:active,
+  &:disabled:hover {
+    cursor: not-allowed;
+  }
+
+  @at-root #{selector-unify(&, a )} {
+    display: inline-flex;
+  }
+
+  // ---------- Theme: Primary ------------------------------------------------
+  &.primary {
+    background-color: $primary;
+    color: $white;
+
+    &:disabled {
+      background-color: $status-failed;
+    }
+
+    @include element-state($hover: true, $pressed: false) {
+      background: $primary-hover;
+    }
+
+    @include element-state($hover: false, $pressed: true) {
+      background: $primary-pressed;
+    }
+  }
+
+  // ---------- Theme: Secondary ----------------------------------------------
+  &.secondary {
+    background: none;
+    border: 1px solid $primary;
+    color: $text-link;
+
+    &:disabled {
+      border-color: $status-failed;
+      color: $text-disabled;
+    }
+
+    @include element-state($hover: true, $pressed: true) {
+      background-color: $bg-highlighted;
+    }
+  }
+
+  // ---------- Theme: Cancel -------------------------------------------------
+  &.cancel {
+    background-color: $cancel;
+    color: $white;
+
+    &:disabled {
+      background-color: $status-failed;
+    }
+
+    @include element-state($hover: true, $pressed: false) {
+      background: $cancel-hover;
+    }
+
+    @include element-state($hover: false, $pressed: true) {
+      background: $cancel-pressed;
+    }
+  }
+
+  &.link {
+    background-color: transparent;
+    color: $text-link;
+
+    &:disabled {
+      color: $text-disabled;
+    }
+
+    @include element-state($hover: true, $pressed: true) {
+      color: darken($primary, 20%);
+    }
+  }
+
+  $base-sizes: (
+    'small' 34px 84px 8px 12px 12px 18px,
+    'normal' 44px 150px 12px 16px 14px 21px,
+    'large' 64px 200px 21px 16px 16px 22px
+  );
+  @each $size, $h, $w, $pad-v, $pad-h, $font-size, $l-height in $base-sizes {
+    &.#{$size} {
+      font-size: $font-size;
+      height: $h;
+      line-height: $l-height;
+      padding: $pad-v $pad-h;
+
+      &.fixed {
+        overflow: hidden;
+        width: $w;
+      }
+    }
+  }
+}

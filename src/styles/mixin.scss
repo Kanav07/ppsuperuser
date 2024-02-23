@@ -1,0 +1,249 @@
+@mixin border-right-radius($raduis) {
+  border-top-right-radius: $raduis;
+  border-bottom-right-radius: $raduis;
+}
+
+@mixin border-left-radius($raduis) {
+  border-top-left-radius: $raduis;
+  border-bottom-left-radius: $raduis;
+}
+
+@mixin border-top-radius($raduis) {
+  border-top-left-radius: $raduis;
+  border-top-right-radius: $raduis;
+}
+
+@mixin flex {
+  display: flex;
+}
+
+@mixin flex-row {
+  @include flex;
+  flex-direction: row;
+}
+
+@mixin flex-col {
+  @include flex;
+  flex-direction: column;
+}
+
+@mixin flex-row-align-center {
+  @include flex-row;
+  align-items: center;
+}
+
+@mixin flex-row-justify-space-between {
+  @include flex-row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-col-align-center {
+  @include flex-col;
+  align-items: center;
+}
+
+@mixin flex-row-justify-center {
+  @include flex-row;
+  justify-content: center;
+}
+@mixin flex-col-justify-center {
+  @include flex-col;
+  justify-content: center;
+}
+
+@mixin flex-row-all-center {
+  @include flex-row-align-center;
+  @include flex-row-justify-center;
+}
+
+@mixin flex-col-all-center {
+  @include flex-col-align-center;
+  @include flex-col-justify-center;
+}
+
+@mixin on-hover-only {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin square-img($size) {
+  img {
+    @include width-height($size);
+    @content;
+  }
+}
+
+@mixin width-height($size) {
+  height: $size;
+  width: $size;
+}
+
+//Responsive mixins
+
+$bp-small: 576px;
+$bp-medium: 768px;
+$bp-large: 992px;
+$bp-xlarge: 1200px;
+$bp-shave: 0.02px;
+$bp-short: 670px;
+
+@mixin wider {
+  @media (min-width: $bp-xlarge) {
+    @content;
+  }
+}
+
+// This corresponds to tablet landscape view mockups.
+@mixin wide {
+  @media (min-width: $bp-large) and (max-width: ($bp-xlarge - $bp-shave)) {
+    @content;
+  }
+}
+
+// This corresponds to tablet portrait view mockups.
+@mixin tall {
+  @media (min-width: $bp-small) and (max-width: ($bp-large - $bp-shave)) {
+    @content;
+  }
+}
+
+// This corresponds to iPhone X mockups.
+@mixin short {
+  @media (max-width: ($bp-small - $bp-shave)) and (min-height: $bp-short) {
+    @content;
+  }
+}
+
+// This corresponds to iPhone small mockups.
+@mixin shorter {
+  @media (max-width: ($bp-small - $bp-shave)) and (max-height: ($bp-short - $bp-shave)) {
+    @content;
+  }
+}
+
+@mixin these-breakpoints($breakpoints...) {
+  @each $bp in $breakpoints {
+    @if $bp == wider {
+      @include wider {
+        @content;
+      }
+    } @else if $bp == wide {
+      @include wide {
+        @content;
+      }
+    } @else if $bp == tall {
+      @include tall {
+        @content;
+      }
+    } @else if $bp == short {
+      @include short {
+        @content;
+      }
+    } @else if $bp == shorter {
+      @include shorter {
+        @content;
+      }
+    } @else {
+      @error "Invalid breakpoint: `#{$bp}`, did you make a typo?";
+    }
+  }
+}
+
+@mixin all-wide {
+  @include these-breakpoints(wider, wide) {
+    @content;
+  }
+}
+
+@mixin all-short {
+  @include these-breakpoints(short, shorter) {
+    @content;
+  }
+}
+
+.d-all-short-only {
+  @include these-breakpoints(wider, wide, tall) {
+    display: none !important;
+  }
+}
+
+.d-none-all-short {
+  @include all-short {
+    display: none !important;
+  }
+}
+
+@mixin on-hover-only {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin element-state($hover: false, $pressed: false) {
+  @if $hover {
+    @media (hover: hover) {
+      &:not(:disabled):hover {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin body-copy {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+@mixin body-copy-small {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+@mixin text-body($color: $text-primary, $size: $font-size-md, $bold: false) {
+  color: $color;
+  font-size: $size;
+  @if $bold {
+    font-weight: bold;
+  }
+}
+
+@mixin text-primary {
+  @include text-body($text-primary, $font-size-md, false);
+}
+
+@mixin text-primary-bold {
+  @include text-body($text-primary, $font-size-md, true);
+}
+
+@mixin text-link {
+  @include text-body($text-link, $font-size-md, false);
+}
+
+@mixin text-link-bold {
+  @include text-body($text-link, $font-size-md, true);
+}
+
+@mixin text-primary-small {
+  @include text-body($text-primary, $font-size-md, false);
+}
+
+@mixin text-secondary {
+  @include text-body($text-secondary, $font-size-md, false);
+}
+
+@mixin chip-btn($color: $soda-01) {
+  font-weight: bold;
+  font-size: 12px;
+  border-radius: 50px;
+  padding: 1px 12px;
+  color: $color;
+  border: 1px solid $color;
+  overflow: visible;
+  display: inline-block;
+}
